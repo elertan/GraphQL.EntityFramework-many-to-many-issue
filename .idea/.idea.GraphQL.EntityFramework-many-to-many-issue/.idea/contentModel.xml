@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="DatabaseContext.cs" t="Include" />
+      <e p="GraphQL.EntityFramework-many-to-many-issue.csproj" t="IncludeRecursive" />
+      <e p="GraphQLUserContext.cs" t="Include" />
+      <e p="Models" t="Include">
+        <e p="Album.cs" t="Include" />
+        <e p="BaseModel.cs" t="Include" />
+        <e p="ManyToMany" t="Include">
+          <e p="TrackXAlbum.cs" t="Include" />
+        </e>
+        <e p="Track.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp2.1" t="Include">
+            <e p="GraphQL.EntityFramework-many-to-many-issue.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Program.cs" t="Include" />
+      <e p="Schemas" t="Include">
+        <e p="Graphs" t="Include">
+          <e p="AlbumGraph.cs" t="Include" />
+          <e p="BaseGraphType.cs" t="Include" />
+          <e p="TrackGraph.cs" t="Include" />
+        </e>
+        <e p="RootQuery.cs" t="Include" />
+        <e p="RootSchema.cs" t="Include" />
+      </e>
+      <e p="Startup.cs" t="Include" />
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2018.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.2/resharper-host/local/Transient/ReSharperHost/v182/SolutionCaches/_GraphQL.504175460.00" t="ExcludeRecursive" />
+  </component>
+</project>
