@@ -20,94 +20,93 @@ namespace GraphQL.EntityFramework_many_to_many_issue
 {
     public class Startup
     {
+        static DatabaseContext Db { get; set; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             var builder = new DbContextOptionsBuilder<DatabaseContext>();
-            builder.UseInMemoryDatabase("test");
+            builder.UseInMemoryDatabase("db");
 
-            services.AddDbContext<DatabaseContext>(
-                options => options.UseInMemoryDatabase("test"),
-                ServiceLifetime.Singleton
-            );
-            
+            Db = new DatabaseContext(builder.Options);
+
+            services.AddSingleton(Db);
+
             GetGraphQLTypes().ToList().ForEach(type => services.AddSingleton(type));
-            
+
+
             // GraphQL.EF (Filtering)
             EfGraphQLConventions.RegisterConnectionTypesInContainer(services);
-            using (var ctx = new DatabaseContext(builder.Options))
+            EfGraphQLConventions.RegisterInContainer(services, Db);
+
+            //  TEMPORARY DATA FILL:
+            var tracks = new[]
             {
-                EfGraphQLConventions.RegisterInContainer(services, ctx);
-                
-                //  TEMPORARY DATA FILL:
-                var tracks = new[]
+                new Track
                 {
-                    new Track
-                    {
-                        Id = 1,
-                        Name = "Track 1",
-                        DurationMs = 150000
-                    },
-                    new Track
-                    {
-                        Id = 2,
-                        Name = "Track 2",
-                        DurationMs = 120000
-                    },
-                    new Track
-                    {
-                        Id = 3,
-                        Name = "Track 3",
-                        DurationMs = 160000
-                    },
-                    new Track
-                    {
-                        Id = 4,
-                        Name = "Track 4",
-                        DurationMs = 140000
-                    },
-                    new Track
-                    {
-                        Id = 5,
-                        Name = "Track 5",
-                        DurationMs = 100000
-                    },
-                };
-
-                var albums = new[]
+                    Id = 1,
+                    Name = "Track 1",
+                    DurationMs = 150000
+                },
+                new Track
                 {
-                    new Album
-                    {
-                        Id = 1,
-                        Name = "My Album 1"
-                    },
-                    new Album
-                    {
-                        Id = 2,
-                        Name = "My Album 2"
-                    },
-                };
+                    Id = 2,
+                    Name = "Track 2",
+                    DurationMs = 120000
+                },
+                new Track
+                {
+                    Id = 3,
+                    Name = "Track 3",
+                    DurationMs = 160000
+                },
+                new Track
+                {
+                    Id = 4,
+                    Name = "Track 4",
+                    DurationMs = 140000
+                },
+                new Track
+                {
+                    Id = 5,
+                    Name = "Track 5",
+                    DurationMs = 100000
+                },
+            };
 
-                var rng = new Random();
+            var albums = new[]
+            {
+                new Album
+                {
+                    Id = 1,
+                    Name = "My Album 1"
+                },
+                new Album
+                {
+                    Id = 2,
+                    Name = "My Album 2"
+                },
+            };
 
-                var trackXAlbums = Enumerable.Range(0, tracks.Length * 3).Select(i =>
-                    new TrackXAlbum
-                    {
-                        Id = i + 1,
-                        AlbumId = rng.Next(albums.Length - 1),
-                        TrackId = rng.Next(tracks.Length - 1)
-                    }
-                );
-                
-                ctx.Tracks.AddRange(tracks);
-                ctx.Albums.AddRange(albums);
-                ctx.SaveChanges();
-                
-                ctx.TrackXAlbums.AddRange(trackXAlbums);
-                ctx.SaveChanges();
-            }
-            
+            var rng = new Random();
+
+            var trackXAlbums = Enumerable.Range(0, tracks.Length * 3).Select(i =>
+                new TrackXAlbum
+                {
+                    Id = i + 1,
+                    AlbumId = rng.Next(albums.Length - 1),
+                    TrackId = rng.Next(tracks.Length - 1)
+                }
+            );
+
+            Db.Tracks.AddRange(tracks);
+            Db.Albums.AddRange(albums);
+            Db.SaveChanges();
+
+            Db.TrackXAlbums.AddRange(trackXAlbums);
+            Db.SaveChanges();
+
             // Enable CORS options
             services.AddCors();
 
@@ -125,12 +124,12 @@ namespace GraphQL.EntityFramework_many_to_many_issue
 
             // Add GraphQL service
             services.AddGraphQL(_ =>
-            {
-                _.EnableMetrics = true;
-                _.ExposeExceptions = true;
-            })
+                {
+                    _.EnableMetrics = true;
+                    _.ExposeExceptions = true;
+                })
                 // Extract user information from the request
-            .AddUserContextBuilder(httpContext => new GraphQLUserContext { User = httpContext.User });
+                .AddUserContextBuilder(httpContext => new GraphQLUserContext {User = httpContext.User});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -151,7 +150,8 @@ namespace GraphQL.EntityFramework_many_to_many_issue
                 Path = "/ui/playground"
             });
         }
-        
+
+        // ReSharper disable once InconsistentNaming
         static IEnumerable<Type> GetGraphQLTypes()
         {
             return typeof(Startup).Assembly

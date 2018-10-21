@@ -16,5 +16,23 @@ namespace GraphQL.EntityFramework_many_to_many_issue
         
         // Many To Many
         public DbSet<TrackXAlbum> TrackXAlbums { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Create many-to-many relationship
+            modelBuilder.Entity<TrackXAlbum>().HasKey(e => new { e.TrackId, e.AlbumId });
+
+            modelBuilder.Entity<TrackXAlbum>()
+                .HasOne(e => e.Track)
+                .WithMany(e => e.Albums)
+                .HasForeignKey(e => e.TrackId);
+
+            modelBuilder.Entity<TrackXAlbum>()
+                .HasOne(e => e.Album)
+                .WithMany(e => e.Tracks)
+                .HasForeignKey(e => e.AlbumId);
+        }
     }
 }
