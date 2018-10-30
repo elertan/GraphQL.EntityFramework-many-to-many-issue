@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p=".gitignore" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="DatabaseContext.cs" t="Include" />
       <e p="GraphQL.EntityFramework-many-to-many-issue.csproj" t="IncludeRecursive" />

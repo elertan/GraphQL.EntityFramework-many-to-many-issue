@@ -15,7 +15,14 @@ namespace GraphQL.EntityFramework_many_to_many_issue.Schemas.Graphs
 
             AddNavigationField<AlbumGraph, Album>(
                 "albums",
-                resolve: ctx => ctx.Source.Albums.Select(e => e.Album)
+                resolve: ctx => db.TrackXAlbums
+                    .Where(e => e.TrackId == ctx.Source.Id)
+                    .Join(
+                        db.Albums,
+                        e => e.AlbumId,
+                        e => e.Id,
+                        (trackXAlbum, album) => album
+                     )
             );
         }
     }

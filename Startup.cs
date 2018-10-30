@@ -91,14 +91,41 @@ namespace GraphQL.EntityFramework_many_to_many_issue
 
             var rng = new Random();
 
-            var trackXAlbums = Enumerable.Range(0, tracks.Length * 3).Select(i =>
+//            var trackXAlbums = Enumerable.Range(0, tracks.Length * 3).Select(i =>
+//                new TrackXAlbum
+//                {
+//                    Id = i + 1,
+//                    AlbumId = rng.Next(albums.Length - 1),
+//                    TrackId = rng.Next(tracks.Length - 1)
+//                }
+//            );
+            var trackXAlbums = new[]
+            {
                 new TrackXAlbum
                 {
-                    Id = i + 1,
-                    AlbumId = rng.Next(albums.Length - 1),
-                    TrackId = rng.Next(tracks.Length - 1)
-                }
-            );
+                    Id = 1,
+                    AlbumId = 1,
+                    TrackId = 1
+                },
+                new TrackXAlbum
+                {
+                    Id = 2,
+                    AlbumId = 1,
+                    TrackId = 2
+                },
+                new TrackXAlbum
+                {
+                    Id = 3,
+                    AlbumId = 1,
+                    TrackId = 3
+                },
+                new TrackXAlbum
+                {
+                    Id = 4,
+                    AlbumId = 2,
+                    TrackId = 4
+                },
+            };
 
             Db.Tracks.AddRange(tracks);
             Db.Albums.AddRange(albums);

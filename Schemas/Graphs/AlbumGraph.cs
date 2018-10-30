@@ -16,7 +16,15 @@ namespace GraphQL.EntityFramework_many_to_many_issue.Schemas.Graphs
             // Need to find a way to remove the Select part to use a single query
             AddNavigationField<TrackGraph, Track>(
                 name: "tracks",
-                resolve: ctx => ctx.Source.Tracks.Select(e => e.Track)
+                resolve: ctx =>
+                    db.TrackXAlbums
+                        .Where(e => e.AlbumId == ctx.Source.Id)
+                        .Join(
+                            db.Tracks,
+                            e => e.TrackId,
+                            e => e.Id,
+                            (_, track) => track
+                        )
             );
         }
     }
