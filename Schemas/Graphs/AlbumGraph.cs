@@ -14,7 +14,7 @@ namespace GraphQL.EntityFramework_many_to_many_issue.Schemas.Graphs
             // TODO: Attempted to use AddQueryField without success, since that introduces
             // a bunch of independent queries (VERY SLOW).
             // Need to find a way to remove the Select part to use a single query
-            AddNavigationField<TrackGraph, Track>(
+            AddQueryConnectionField<TrackGraph, Track>(
                 name: "tracks",
                 resolve: ctx =>
                     db.TrackXAlbums

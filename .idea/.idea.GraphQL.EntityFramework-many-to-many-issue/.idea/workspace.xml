@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ffaa2944-7f74-4d46-969d-4cb4b2f8f0a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GraphQL.EntityFramework-many-to-many-issue/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GraphQL.EntityFramework-many-to-many-issue/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GraphQL.EntityFramework-many-to-many-issue/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GraphQL.EntityFramework-many-to-many-issue/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schemas/Graphs/AlbumGraph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Schemas/Graphs/AlbumGraph.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schemas/Graphs/TrackGraph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Schemas/Graphs/TrackGraph.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
-    </list>
+    <list default="true" id="ffaa2944-7f74-4d46-969d-4cb4b2f8f0a1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,12 +34,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="2065" />
+          <entry key="cs" value="2076" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="2065" />
+          <entry key="C#" value="2076" />
         </counts>
       </usages-collector>
     </session>
@@ -107,13 +101,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Schemas/Graphs/TrackGraph.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+            <state relative-caret-position="234">
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
               <folding>
-                <marker date="1540859369706" expanded="false" signature="6:106" ph="..." />
-                <marker date="1540859369706" expanded="true" signature="175:988" ph="{...}" />
-                <marker date="1540859369706" expanded="true" signature="228:986" ph="{...}" />
-                <marker date="1540859369706" expanded="true" signature="341:980" ph="{...}" />
+                <marker date="1540859457276" expanded="false" signature="6:106" ph="..." />
+                <marker date="1540859457276" expanded="true" signature="175:978" ph="{...}" />
+                <marker date="1540859457276" expanded="true" signature="228:976" ph="{...}" />
+                <marker date="1540859457276" expanded="true" signature="341:970" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -122,14 +116,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Schemas/Graphs/AlbumGraph.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="51" lean-forward="true" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+            <state relative-caret-position="273">
+              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
               <folding>
-                <marker date="1540859088797" expanded="true" signature="6:106" ph="..." />
-                <marker date="1540859088797" expanded="true" signature="175:1151" ph="{...}" />
-                <marker date="1540859088797" expanded="true" signature="228:1149" ph="{...}" />
-                <marker date="1540859088797" expanded="true" signature="341:1143" ph="{...}" />
-                <marker date="1540859088797" expanded="true" signature="447:666" ph="/* TODO: Attempted to use AddQueryField without success, since that introduces ... */" />
+                <marker date="1540859488073" expanded="true" signature="6:106" ph="..." />
+                <marker date="1540859488073" expanded="true" signature="175:1141" ph="{...}" />
+                <marker date="1540859488073" expanded="true" signature="228:1139" ph="{...}" />
+                <marker date="1540859488073" expanded="true" signature="341:1133" ph="{...}" />
+                <marker date="1540859488073" expanded="true" signature="447:666" ph="/* TODO: Attempted to use AddQueryField without success, since that introduces ... */" />
               </folding>
             </state>
           </provider>
@@ -170,8 +164,8 @@
         <option value="$PROJECT_DIR$/Models/Album.cs" />
         <option value="$PROJECT_DIR$/DatabaseContext.cs" />
         <option value="$PROJECT_DIR$/Startup.cs" />
-        <option value="$PROJECT_DIR$/Schemas/Graphs/AlbumGraph.cs" />
         <option value="$PROJECT_DIR$/Schemas/Graphs/TrackGraph.cs" />
+        <option value="$PROJECT_DIR$/Schemas/Graphs/AlbumGraph.cs" />
       </list>
     </option>
   </component>
@@ -279,12 +273,12 @@
       <workItem from="1540080229326" duration="20000" />
       <workItem from="1540080261556" duration="1139000" />
       <workItem from="1540857016984" duration="19000" />
-      <workItem from="1540857058070" duration="1951000" />
+      <workItem from="1540857058070" duration="2350000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5980000" />
+    <option name="totallyTimeSpent" value="6379000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -299,13 +293,13 @@
     <frame x="318" y="106" width="1680" height="979" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26190478" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26190478" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32919955" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3990981" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3990981" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -475,27 +469,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Schemas/Graphs/AlbumGraph.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="51" lean-forward="true" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        <state relative-caret-position="273">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding>
-            <marker date="1540859088797" expanded="true" signature="6:106" ph="..." />
-            <marker date="1540859088797" expanded="true" signature="175:1151" ph="{...}" />
-            <marker date="1540859088797" expanded="true" signature="228:1149" ph="{...}" />
-            <marker date="1540859088797" expanded="true" signature="341:1143" ph="{...}" />
-            <marker date="1540859088797" expanded="true" signature="447:666" ph="/* TODO: Attempted to use AddQueryField without success, since that introduces ... */" />
+            <marker date="1540859488073" expanded="true" signature="6:106" ph="..." />
+            <marker date="1540859488073" expanded="true" signature="175:1141" ph="{...}" />
+            <marker date="1540859488073" expanded="true" signature="228:1139" ph="{...}" />
+            <marker date="1540859488073" expanded="true" signature="341:1133" ph="{...}" />
+            <marker date="1540859488073" expanded="true" signature="447:666" ph="/* TODO: Attempted to use AddQueryField without success, since that introduces ... */" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Schemas/Graphs/TrackGraph.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        <state relative-caret-position="234">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
           <folding>
-            <marker date="1540859369706" expanded="false" signature="6:106" ph="..." />
-            <marker date="1540859369706" expanded="true" signature="175:988" ph="{...}" />
-            <marker date="1540859369706" expanded="true" signature="228:986" ph="{...}" />
-            <marker date="1540859369706" expanded="true" signature="341:980" ph="{...}" />
+            <marker date="1540859457276" expanded="false" signature="6:106" ph="..." />
+            <marker date="1540859457276" expanded="true" signature="175:978" ph="{...}" />
+            <marker date="1540859457276" expanded="true" signature="228:976" ph="{...}" />
+            <marker date="1540859457276" expanded="true" signature="341:970" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -13,7 +13,7 @@ namespace GraphQL.EntityFramework_many_to_many_issue.Schemas.Graphs
             Field(t => t.Name).Description("The name of the track.");
             Field(t => t.DurationMs).Description("The duration of the track in milliseconds");
 
-            AddNavigationField<AlbumGraph, Album>(
+            AddQueryConnectionField<AlbumGraph, Album>(
                 "albums",
                 resolve: ctx => db.TrackXAlbums
                     .Where(e => e.TrackId == ctx.Source.Id)

@@ -10,10 +10,10 @@ namespace GraphQL.EntityFramework_many_to_many_issue.Schemas
         {
             Name = "Query";
             
-            AddQueryField<TrackGraph, Track>(
+            AddQueryConnectionField<TrackGraph, Track>(
                 name: "tracks",
                 resolve: ctx => db.Tracks);
-            AddQueryField<AlbumGraph, Album>(
+            AddQueryConnectionField<AlbumGraph, Album>(
                 name: "albums",
                 resolve: ctx => db.Albums);
         }
